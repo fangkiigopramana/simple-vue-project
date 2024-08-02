@@ -1,24 +1,36 @@
 <template>
-   <navbar-vue 
+   <Navbar
         :pages="pages"
         :active-page="activePage"
-        :nav-link-click="(index) => activePage = index"
-    ></navbar-vue>
-    <content-vue
-        :page="pages[activePage]"
-    ></content-vue>
+        :nav-link-click="(index) => activePage = index"/>
+    <!-- <Content :page="pages[activePage]"/> -->
+    <div v-if="activePage == 0">
+        <Home />
+    </div>
+    <div v-else-if="activePage == 1">
+        <Shop />
+    </div>
+    <div v-else>
+        <About />
+    </div>
 </template>
 
 <script>
-import ContentVue from "./components/Content.vue"
-import NavbarVue from "./components/Navbar.vue"
+import Navbar from "./components/Navbar.vue"
+import Content from "./components/Content.vue"
+import Shop from "./pages/Shop.vue"
+import About from "./pages/About.vue"
+import Home from "./pages/Home.vue"
 
 
 export default {
   components: {
-    ContentVue,
-    NavbarVue
-  },
+    Navbar,
+    Content,
+    Shop,
+    About,
+    Home
+},
   data(){
       return {
           activePage: 0,

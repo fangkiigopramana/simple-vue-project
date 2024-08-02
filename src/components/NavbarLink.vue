@@ -1,6 +1,6 @@
 <template>
     <a 
-        class="nav-link"
+        class="nav-link nav-item"
         :class="activeClasses"
         aria-current="page"
         :href="page.link.href"
@@ -17,16 +17,8 @@ export default {
         activeClasses(){
             return {
                 active: this.isActive,
-                emphatize: this.isActive
             }
         }
     }
 }
 </script>
-
-<style scoped>
-.emphatize{
-    text-decoration: underline !important;
-    font-weight: bold !important;
-}
-</style>
