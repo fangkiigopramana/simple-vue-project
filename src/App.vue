@@ -42,12 +42,12 @@ export default {
                   content: 'This is home page'
               },
               {
-                  link: {text:'About', href:'about.html'},
+                  link: {text:'Shop', href:'shop.html'},
                   pageTitle: 'Hello About',
                   content: 'This is about page'
               },
               {
-                  link: {text:'Contact', href:'contact.html'},
+                  link: {text:'About', href:'about.html'},
                   pageTitle: 'Hello Contact',
                   content: 'This is contact page'
               },

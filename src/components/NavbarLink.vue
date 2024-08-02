@@ -1,6 +1,6 @@
 <template>
     <a 
-        class="nav-link nav-item"
+        class="nav-link"
         :class="activeClasses"
         aria-current="page"
         :href="page.link.href"

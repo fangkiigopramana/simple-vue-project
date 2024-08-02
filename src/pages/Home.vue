@@ -158,9 +158,9 @@
                 <div class="col-3 col-md-3" v-for="(item, index) in typeDatas" :key="index">
                     <div class="feature">
                         <div class="mb-3 ">
-                            <span class="rounded-circle bg-dark p-2 text-light fw-bold">{{index+1}}</span>
+                            <img :src="item.img_link" alt="Image" class="img-fluid product-thumbnail rounded-3">
                         </div>
-                        <h3 class="fw-bolder">{{item.name}}</h3>
+                        <a href="#" class="fw-bolder text-primary text-none-decoration">{{(item.name).toUpperCase()}}</a>
                         <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
                     </div>
                 </div>
@@ -221,61 +221,6 @@
         </div>
     </div>
     <!-- End Testimonial Slider -->
-
-    <!-- Start Blog Section -->
-    <div class="blog-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-6">
-                    <h2 class="section-title">Recent Blog</h2>
-                </div>
-                <div class="col-md-6 text-start text-md-end">
-                    <a href="#" class="more">View All Posts</a>
-                </div>
-            </div>
-
-            <div class="row">
-
-                <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-                    <div class="post-entry">
-                        <a href="#" class="post-thumbnail"><img src="../assets/images/post-1.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="post-content-entry">
-                            <h3><a href="#">First Time Home Owner Ideas</a></h3>
-                            <div class="meta">
-                                <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2021</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-                    <div class="post-entry">
-                        <a href="#" class="post-thumbnail"><img src="../assets/images/post-2.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="post-content-entry">
-                            <h3><a href="#">How To Keep Your Furniture Clean</a></h3>
-                            <div class="meta">
-                                <span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-                    <div class="post-entry">
-                        <a href="#" class="post-thumbnail"><img src="../assets/images/post-3.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="post-content-entry">
-                            <h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
-                            <div class="meta">
-                                <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2021</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- End Blog Section -->	
 </template>
 
 <script>
@@ -289,7 +234,7 @@ export default {
     }
   },
   mounted() {
-    const apiProductUrl = 'https://furni-store.kihub.net/api/products?sum=3';
+    const apiProductUrl = 'https://furni-store.kihub.net/api/products?limit=3';
     const apiTypeUrl = 'https://furni-store.kihub.net/api/types';
     this.fetchData(apiProductUrl, apiTypeUrl);
   },
